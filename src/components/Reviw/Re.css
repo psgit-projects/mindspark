@@ -1,78 +1,122 @@
+/* Container for testimonials */
 .re {
     margin: 80px auto;
     padding: 0 80px;
     position: relative;
+    max-width: 1200px;
 }
 
+/* Navigation Arrows */
 .n-btn, .b-btn {
     position: absolute;
     top: 50%;
-    right: 0;
-    transform: translate(-50%);
+    transform: translateY(-50%);
     padding: 15px;
     width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
     background: rgb(18, 10, 46);
+    color: white;
+    border: none;
+    font-size: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Left and Right arrows positioning */
+.n-btn { left: -25px; }
+.b-btn { right: -25px; }
+
+/* Slider container */
 .sl {
-    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
 }
 
+.sl::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Slider list */
 .sl ul {
     display: flex;
-    width: 135%;
-    overflow-x: hidden;
-    transition: 0.5s;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
+/* Each testimonial card */
 .sl ul li {
     list-style: none;
-    width: 50%;
+    flex: 0 0 50%; /* Two cards per row on desktop */
     padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Card styling */
 .sle {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
     border-radius: 10px;
-    color: black;
-    line-height: 1.4;
+    background: #fff;
+    color: #000;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 220px;
 }
 
+/* User image */
 .sle img {
     width: 75px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 15px;
     border: 4px solid navy;
 }
 
+/* Header of testimonial */
 .ul {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 15px;
 }
 
 .ul h3 {
     color: rgb(57, 57, 153);
+    margin: 0;
+}
+
+.ul span {
+    font-size: 13px;
+    color: gray;
 }
 
 /* Responsive Design */
+
+/* Tablets: show 1 card per row */
+@media (max-width: 1024px) {
+    .sl ul li {
+        flex: 0 0 100%;
+    }
+}
+
+/* Smaller tablets and large mobile screens */
 @media (max-width: 800px) {
     .re {
         padding: 0 40px;
     }
 
     .n-btn, .b-btn {
+        width: 40px;
+        height: 40px;
         padding: 10px;
-        width: 35px;
-    }
-
-    .sl ul li {
-        padding: 10px;
-        width: 100%; /* Adjust to take full width in smaller screens */
+        font-size: 18px;
     }
 
     .sle {
@@ -95,19 +139,22 @@
     }
 }
 
+/* Small mobile screens */
 @media (max-width: 500px) {
     .re {
         padding: 0 20px;
+        margin: 50px auto;
     }
 
     .n-btn, .b-btn {
         width: 30px;
         height: 30px;
         padding: 8px;
+        font-size: 16px;
     }
 
     .sl ul li {
-        padding: 5px;
+        padding: 10px;
     }
 
     .sle {
@@ -121,5 +168,9 @@
 
     .ul h3 {
         font-size: 16px;
+    }
+
+    .ul span {
+        font-size: 12px;
     }
 }
