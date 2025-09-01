@@ -6,7 +6,7 @@ import Title from './components/Title/Title'
 import About from './components/About/About'
 import Cm from './components/camps/Cm'
 import Re from './components/Reviw/Re'
-import Contact from './components/contact/contact'
+import Contact from './components/contact/Contact.jsx'
 import Foooter from './components/footer/Foooter'
 import Video from './components/videoPlayer/Video'
 
