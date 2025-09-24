@@ -22,7 +22,7 @@ function Navbar() {
   return (
     <nav className={`ct ${sticky ? 'dark-nav': ''}`}>
       {/* Logo for NextLearn */}
-      <h1 className="logo">Skill<span>Verse</span></h1>
+     <img className='logo' src={logo} alt=" Logo" />
 
       <ul className={mm ? '' : 'hide-m-m'}>
         <li><Link to="hero" smooth={true} offset={-260} duration={500}>Home</Link></li>
